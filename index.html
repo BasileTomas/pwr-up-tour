@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sorpresa PWR UP Tour</title>
+    <title>AC/DC PWR UP Tour</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,8 +34,7 @@
         font-family: "Montserrat", Arial, sans-serif;
         color: var(--text-light);
         background: radial-gradient(circle at top, #2b0000, #050505 60%);
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden;
       }
 
       .stage-lights {
@@ -92,7 +91,8 @@
       }
 
       .ticket {
-        width: min(780px, 100%);
+        width: 100%;
+        max-width: 780px;
         background: linear-gradient(135deg, #161616, #0a0a0a 60%);
         border: 3px solid var(--acdc-red);
         border-radius: 24px;
@@ -102,6 +102,7 @@
         overflow: hidden;
         position: relative;
         animation: ticketGlow 3s ease-in-out infinite;
+        margin: 2rem auto;
       }
 
       @keyframes ticketGlow {
@@ -144,14 +145,15 @@
           rgba(255, 30, 30, 0.9),
           rgba(252, 185, 0, 0.9)
         );
-        padding: 1.5rem 2rem;
+        padding: 1rem 1.5rem;
         text-transform: uppercase;
-        letter-spacing: 0.3rem;
-        font-size: clamp(1.2rem, 3vw, 1.6rem);
+        letter-spacing: 0.15rem;
+        font-size: clamp(0.85rem, 3vw, 1.6rem);
         font-weight: 800;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
       }
 
       .ticket-body {
@@ -297,17 +299,80 @@
 
       @media (max-width: 600px) {
         body {
-          padding: 1rem;
+          padding: 0.5rem;
+          padding-bottom: 2rem;
+        }
+
+        .ticket {
+          border-width: 2px;
+          border-radius: 20px;
+          margin: 1rem auto;
         }
 
         .ticket-body {
-          padding: 1.8rem;
+          padding: 1.2rem;
+          gap: 1.2rem;
         }
 
         .ticket-header {
-          flex-direction: column;
-          gap: 0.6rem;
-          letter-spacing: 0.2rem;
+          padding: 0.8rem 1rem;
+          letter-spacing: 0.1rem;
+          font-size: 0.75rem;
+        }
+        
+        .ticket::before,
+        .ticket::after {
+          width: 100px;
+          height: 100px;
+        }
+        
+        .ticket::before {
+          left: -50px;
+        }
+        
+        .ticket::after {
+          right: -50px;
+        }
+        
+        .details {
+          gap: 0.8rem;
+        }
+        
+        .detail-card {
+          padding: 0.8rem;
+        }
+        
+        .message {
+          font-size: 0.9rem;
+          padding-top: 1rem;
+        }
+        
+        .message p {
+          margin-top: 0.8rem !important;
+        }
+      }
+      
+      @media (max-width: 380px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+        
+        .hero h2 {
+          font-size: 1rem;
+        }
+        
+        .surprise-badge {
+          font-size: 0.9rem;
+          padding: 0.5rem 1rem;
+        }
+        
+        .message {
+          font-size: 0.85rem;
+        }
+        
+        .cta span {
+          font-size: 0.75rem;
+          padding: 0.6rem 1.2rem;
         }
       }
     </style>
@@ -364,7 +429,7 @@
             ¡Va a ser INCREÍBLE!
           </p>
           <p style="margin-top: 1rem;">
-            <span class="message-highlight">¡Y no vas a ir solo!</span> Estas 3 entradas son para que vayas con Papa y Mamá juntos 
+            <span class="message-highlight">¡Y no vas a ir solo!</span> Estas 3 entradas son para que vayamos juntos 
             a vivir esta aventura rockera inolvidable.
           </p>
           <p class="signature">
