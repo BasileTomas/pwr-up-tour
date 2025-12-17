@@ -34,7 +34,7 @@
         font-family: "Montserrat", Arial, sans-serif;
         color: var(--text-light);
         background: radial-gradient(circle at top, #2b0000, #050505 60%);
-        overflow: hidden;
+        overflow-x: hidden;
       }
 
       .stage-lights {
@@ -53,6 +53,7 @@
           );
         filter: blur(20px);
         animation: pulse 6s ease-in-out infinite alternate;
+        z-index: 0;
       }
 
       @keyframes pulse {
@@ -69,6 +70,7 @@
         inset: 0;
         pointer-events: none;
         overflow: hidden;
+        z-index: 0;
       }
 
       .firework {
@@ -99,10 +101,11 @@
         box-shadow: 
           0 0 40px rgba(255, 30, 30, 0.5),
           0 20px 60px rgba(0, 0, 0, 0.8);
-        overflow: hidden;
+        overflow: visible;
         position: relative;
         animation: ticketGlow 3s ease-in-out infinite;
         margin: 2rem auto;
+        z-index: 1;
       }
 
       @keyframes ticketGlow {
@@ -129,6 +132,7 @@
         border: 1px dashed rgba(255, 255, 255, 0.15);
         top: 50%;
         transform: translateY(-50%);
+        z-index: -1;
       }
 
       .ticket::before {
@@ -420,16 +424,16 @@
         </div>
         <div class="message">
           <p>
-            ¡Querido campeón! Este año Papá Noel preparó algo <span class="message-highlight">MUY ESPECIAL</span> para vos. 
-            ¡Vas a ir a ver a AC/DC en concierto! 🤘
+            ¡Querido Vicente! Este año Papá Noel preparó algo <span class="message-highlight">MUY ESPECIAL</span> para vos. 
+            ¡Vas a ir a ver a AC/DC! 🤘
           </p>
           <p style="margin-top: 1rem;">
             Vas a escuchar las guitarras más potentes del mundo, sentir 
-            el escenario temblar y cantar a todo pulmón con miles de personas. 
+            el estadio temblar y cantar a los gritos con miles de personas. 
             ¡Va a ser INCREÍBLE!
           </p>
           <p style="margin-top: 1rem;">
-            <span class="message-highlight">¡Y no vas a ir solo!</span> Estas 3 entradas son para que vayamos juntos 
+            <span class="message-highlight">¡Y no vas a ir solo!</span> Estas 3 entradas son para que vayas con Tomi y Mamá 
             a vivir esta aventura rockera inolvidable.
           </p>
           <p class="signature">
